@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
+      - '.vscode/**'
+      - '.idea/**'
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  grant-disbursement-contracts-validate:
+    name: Run grant-disbursement-contracts release
+    secrets: inherit
+    uses: ./.github/workflows/grant-disbursement-contracts-ci.yaml
+
+  grant-disbursement-contracts-release:
+    name: Run grant-disbursement-contracts release
+    secrets: inherit
+    uses: ./.github/workflows/grant-disbursement-contracts-cd.yaml
+    needs: grant-disbursement-contracts-validate
+
+  grant-disbursement-frontend-validate:
+    name: Run grant-disbursement-frontend release
+    secrets: inherit
+    uses: ./.github/workflows/grant-disbursement-frontend-ci.yaml
+
+  grant-disbursement-frontend-release:
+    name: Run grant-disbursement-frontend release
+    secrets: inherit
+    uses: ./.github/workflows/grant-disbursement-frontend-cd.yaml
+    needs: grant-disbursement-frontend-validate

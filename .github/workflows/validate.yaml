@@ -1,0 +1,14 @@
+name: Pull Request validation
+
+on: [pull_request]
+
+
+jobs:
+  grant-disbursement-contracts-ci:
+    name: Run grant-disbursement-contracts validation
+    uses: ./.github/workflows/grant-disbursement-contracts-ci.yaml
+
+  grant-disbursement-frontend-ci:
+    name: Run grant-disbursement-frontend validation
+    uses: ./.github/workflows/grant-disbursement-frontend-ci.yaml
+

@@ -168,7 +168,7 @@ submit_review()        # Store review hash
 procurelink/
 ├── procurelink-contracts/       # Algorand smart contracts (AlgoKit)
 │   └── contracts/
-│       └── procurelink_contract.py
+│       └── procurelink_contract.ts
 ├── procurelink-backend/         # FastAPI application
 │   └── app/
 │       ├── main.py
@@ -285,18 +285,6 @@ Full API docs available at `http://localhost:8000/docs` (Swagger UI) after runni
 
 ---
 
-## 🔐 Demo Credentials
-
-| Role | Email | Password |
-|---|---|---|
-| Admin | admin@procurelink.in | password123 |
-| Supplier | supplier@procurelink.in | password123 |
-| Buyer | buyer@procurelink.in | password123 |
-
-> ⚠️ For demo/development use only.
-
----
-
 ## 🗺️ Development Roadmap
 
 | Week | Milestone |
@@ -354,8 +342,6 @@ git push origin feature/your-feature
 ---
 
 ## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 

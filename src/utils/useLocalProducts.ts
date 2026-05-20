@@ -25,8 +25,7 @@ function load(): Product[] {
 
   try {
     return JSON.parse(raw)
-  } catch (error) {
-    console.warn('Failed to read local products.', error)
+  } catch (_) {
     localStorage.removeItem(STORAGE_KEY)
     return []
   }

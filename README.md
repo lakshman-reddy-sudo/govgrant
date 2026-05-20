@@ -165,28 +165,26 @@ submit_review()        # Store review hash
 ## 📁 Folder Structure
 
 ```
-procurelink/
-├── procurelink-contracts/       # Algorand smart contracts (AlgoKit)
-│   └── contracts/
-│       └── procurelink_contract.ts
-├── procurelink-backend/         # FastAPI application
-│   └── app/
-│       ├── main.py
-│       ├── models/              # SQLAlchemy models
-│       ├── schemas/             # Pydantic schemas
-│       ├── api/                 # REST endpoints
-│       ├── services/            # Business logic
-│       └── core/                # Config & security
-├── procurelink-frontend/        # React application
-│   └── src/
-│       ├── pages/
-│       ├── components/
-│       ├── services/
-│       ├── hooks/
-│       └── store/
-├── docs/
-├── scripts/
-├── .github/workflows/
+ProcureLink/
+├── public/
+│   ├── index.html              # Static public asset
+│   └── robots.txt
+├── src/
+│   ├── components/              # UI components
+│   ├── contracts/               # Algorand client + contract artifacts
+│   │   ├── ProcureLink.ts
+│   │   └── README.md
+│   ├── interfaces/              # Shared TypeScript interfaces
+│   ├── styles/                  # Global styles
+│   ├── utils/
+│   │   ├── network/             # Algorand network helpers
+│   │   └── ...
+│   ├── App.tsx
+│   ├── Home.tsx
+│   └── main.tsx
+├── index.html                  # Main app entry used by Vite dev server/build
+├── package.json
+├── vite.config.ts
 └── README.md
 ```
 

@@ -167,7 +167,7 @@ submit_review()        # Store review hash
 ```
 ProcureLink/
 ├── public/
-│   ├── index.html
+│   ├── index.html              # Static public asset
 │   └── robots.txt
 ├── src/
 │   ├── components/              # UI components
@@ -182,7 +182,7 @@ ProcureLink/
 │   ├── App.tsx
 │   ├── Home.tsx
 │   └── main.tsx
-├── index.html
+├── index.html                  # Vite entry HTML
 ├── package.json
 ├── vite.config.ts
 └── README.md

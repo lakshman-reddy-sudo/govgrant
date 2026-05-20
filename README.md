@@ -182,7 +182,7 @@ ProcureLink/
 │   ├── App.tsx
 │   ├── Home.tsx
 │   └── main.tsx
-├── index.html                  # Vite entry HTML
+├── index.html                  # Main app entry used by Vite dev server/build
 ├── package.json
 ├── vite.config.ts
 └── README.md

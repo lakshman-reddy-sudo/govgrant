@@ -17,14 +17,19 @@ const STORAGE_KEY = 'procurelink_products_v2'
 const LEGACY_STORAGE_KEY = 'procurelink_products'
 
 function load(): Product[] {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY)
-    if (raw) return JSON.parse(raw)
-  } catch (_) {
-    localStorage.removeItem(STORAGE_KEY)
+  const raw = localStorage.getItem(STORAGE_KEY)
+  if (!raw) {
+    localStorage.removeItem(LEGACY_STORAGE_KEY)
+    return []
   }
-  localStorage.removeItem(LEGACY_STORAGE_KEY)
-  return []
+
+  try {
+    return JSON.parse(raw)
+  } catch (error) {
+    console.warn('Failed to read local products.', error)
+    localStorage.removeItem(STORAGE_KEY)
+    return []
+  }
 }
 
 function save(products: Product[]) {
